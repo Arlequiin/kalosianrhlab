@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- just some general stuff -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalosian RH Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="static/logo.png"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.png') }}">
+<meta content="Kalosian Rom-Hacking Lab" property="og:title" />
+    <meta content="Le site de référence en terme de rom-hacking. Impossible n'est pas Kalosien." property="og:description" />
+    <meta content="https://cdn.discordapp.com/attachments/797393995989909515/827818678929981471/Dragon_originel.png" property="og:url" />
+    <meta content="https://media.discordapp.net/attachments/1074433763452403923/1080951088779374632/logo.png" property="og:image" />
+    <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
+  </head>
+  <body> <!-- page body goes here -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="logo" href="/">
+        <img src="/static/logo.png" alt="logo" height="45" width="45"/>
+        <h1>Kalosian RH Lab</h1>
+      </a>
+      <a class="profile" href="/profile">
+        <img src="/static/profile.png" title="account" alt="profile" height="50" width="50"/>
+      </a>
+      <ul>
+        <li><a href="/tutos">Tutos</a></li>
+        <li><a href="/youtube">Youtube</a></li>
+        <li><a href="/discord">Discord</a></li>
+      </ul>
+    </nav>
+    <div style="padding: 20px; margin-top: 50px;"></div>
+    <h1>PART 1 : Setup</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<div>
+  <button onclick="openCity('London')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/1024px-Windows_logo_-_2021.svg.png" width="50" height="50"></button>
+  <button onclick="openCity('Paris')"><img src="https://1000logos.net/wp-content/uploads/2017/03/LINUX-LOGO.png" width="50" height="50"></button>
+  <button onclick="openCity('Tokyo')"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/MacOS_logo_%282017%29.svg/2060px-MacOS_logo_%282017%29.svg.png" width="50" height="50"></button>
+</div>
+<hr>
+<div id="London" class="w3-container city">
+  <h2>Windows</h2>
+  <p>Sur Windows, vous avez la possibilité de compiler sur trois consoles différentes :</p>
+  <ul>
+    <li>WSL1</li>
+    <li>msys2</li>
+    <li>Cygwin</li>
+  </ul>
+  <p>WSL1 (Windows Subsystem for Linux version 1) est une fonctionnalité de Windows 10 qui permet d'exécuter un sous-système Linux natif sur un système d'exploitation Windows, sans nécessiter une machine virtuelle ou une installation de Linux distincte. Il sera question dans ce tutoriel d'installation avec WSL1, ce dernier étant le moyen le plus rapide sur Windows de compiler votre jeu.</p>
+<h2>Installation de WSL1</h2>
+Ouvrez Windows Powershell en tant qu'administrateur et exécutez la commande suivante (cliquez avec le bouton droit de la souris ou utilisez Maj+Insert pour coller dans Powershell).
+<div style="position: relative;">
+  <pre><code class="language-powershell">
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-1')">Copier</button>
+</div>
+Une fois que l'exécution de la commande est terminée, redémarrez votre ordinateur.
+La prochaine étape consiste à choisir et installer une distribution Linux depuis le Microsoft Store. Les instructions suivantes supposeront qu'Ubuntu est la distribution Linux choisie.
+<h2>Mise en place de WSL1</h2>
+<p>Voici quelques astuces avant de continuer:</p>
+<li>Dans WSL, la copie et le collage se font soit via</li>
+<ul>
+  <li>Un clic droit (sélection + clic droit pour copier, clic droit sans sélection pour coller).</li>
+  <li>Ctrl+Shift+C/Ctrl+Shift+V (activé en cliquant avec le bouton droit sur la barre de titre, en allant dans Propriétés, puis en cochant la case à côté de "Utiliser Ctrl+Shift+C/V comme Copier/Coller").</li>
+</ul>
+<li>Certaines des commandes que vous allez exécuter demanderont votre mot de passe WSL et/ou une confirmation pour effectuer l'action indiquée. C'est normal, il suffit d'entrer votre mot de passe WSL et/ou l'action "yes" lorsque nécessaire.</li>
+<br>
+1. Ouvrir Ubuntu (par exemple avec la barre de recherche).<br>
+2. WSL/Ubuntu va configurer sa propre installation lorsqu'elle sera exécutée pour la première fois. Une fois que WSL/Ubuntu aura fini d'installer, il vous demandera un nom d'utilisateur et un mot de passe (à saisir).<br>
+<div class="tips">Lorsque vous saisissez le mot de passe, il n'y aura aucune réponse visible, mais le terminal continuera prendra en compte votre saisie.</div>
+3. Mettez à jour WSL/Ubuntu avant de continuer. Pour ce faire, exécutez la commande suivante. L'exécution de ces commandes prendra probablement un certain temps :
+<div style="position: relative;">
+  <pre><code class="language-bash">
+sudo apt update && sudo apt upgrade
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-2')">Copier</button>
+</div>
+4. Certains packages sont requis afin de compiler pokeemerald. Installez-les à l'aide de la commande suivante :
+<div style="position: relative;">
+  <pre><code class="language-bash">
+sudo apt install build-essential binutils-arm-none-eabi git libpng-dev
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-3')">Copier</button>
+</div>
+<div class="info">Si la commade ci-dessus ne fonctionne pas, tentez de remplacer 'apt' par 'apt-get'</div>
+</div>
+
+<div id="Paris" class="w3-container city" style="display:none">
+  <h2>Linux</h2>
+  <p>C'est en cours...</p> 
+</div>
+
+<div id="Tokyo" class="w3-container city" style="display:none">
+  <h2>macOS</h2>
+  <p>C'est en cours...</p>
+</div>
+<hr>
+<h2>Installation</h2>
+1. Si ce n'est pas déjà fait, installez la version française de pokeemerald en saisissant la commande suivante :
+<div style="position: relative;">
+  <pre><code class="language-bash">
+git clone -b french https://github.com/DizzyEggg/pokeemerald/
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-4')">Copier</button>
+</div>
+2. Installez agbcc dans pokeemerald en exécutant les commandes ci-dessous :
+<div style="position: relative;">
+  <pre><code class="language-bash">
+git clone https://github.com/pret/agbcc
+cd agbcc
+./build.sh
+./install.sh ../pokeemerald
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-5')">Copier</button>
+</div>
+Une fois ceci fait, sortez du dossier agbcc, cela peut s'effectuer avec la commande suivante qui revient à remonter d'un niveau dans le dossier.
+<div style="position: relative;">
+  <pre><code class="language-bash">
+cd ..
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-6')">Copier</button>
+</div>
+<h2>Compiler pokeemerald</h2>
+Pour compiler pokeemerald, il vous faut être dans ce dossier. Pour ce faire saisissez la commande suivante :
+  <div style="position: relative;">
+  <pre><code class="language-bash">
+cd pokeemerald
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-7')">Copier</button>
+</div>
+Plus qu'à saisir la commande pour compiler
+  <div style="position: relative;">
+  <pre><code class="language-bash">
+make
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-8')">Copier</button>
+</div>
+Alternativement vous pouvez ajouter '-jN' avec N le nombre de cœurs de votre processeurs. Si vous ne connaissez pas ce nombre vous pouvez le trouver à l'aide de la commande nproc sur Windows et Linux, sysctl -n hw.ncpu sur macOS.<br>
+Et.. voilà! En ouvrant votre dossier pokeemerald vous trouvez votre jolie rom pokeemerald.gba qui correspond parfaitement à l'originale! Afin de gagner du temps, vous pouvez utiliser des alias, raccourcis si vous préférez, ça consiste à assigner une ou plusieurs commande à un nom, pour ma part j'utilise tout le temps cette commande, comme ça dès que la compilation se termine ma rom s'ouvre. Attention cette syntaxe est propre à macOS, il existe des alternatives sur les autres systèmes.
+  <div style="position: relative;">
+  <pre><code class="language-bash">
+alias c="make -j8 && open pokeemerald.gba"
+  </code></pre>
+  <button class="copy-btn" onclick="copyToClipboard('code-9')">Copier</button>
+</div>
+<center><img src="{{ url_for('static', filename='title.png') }}" class="image"></center><br>
+<center><em>... C'est-il pas beau la vie?</em></center>
+<script>
+  const codeBlocks = document.querySelectorAll('code');
+  const copyButtons = document.querySelectorAll('.copy-btn');
+  
+  copyButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const textToCopy = codeBlocks[index].innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        button.innerText = '✅ Copié!';
+        setTimeout(() => {
+          button.innerText = 'Copier';
+        }, 2000);
+      });
+    });
+  });
+</script>
+<script>
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(cityName).style.display = "block";  
+}
+</script>
+  <div class="dark-mode">
+  <div class="profile-container">
+    <img class="profile-picture" src="https://media.discordapp.net/attachments/1010300796723798088/1043201250373681163/image.png" alt="Profile Picture">
+    <p class="username">Par Arlequiin</p> 
+  </div>
+    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Faire un don', '#29abe0', 'O5O3HVW5N');kofiwidget2.draw();</script>
+</div>
+
+  </body>
+  
+</html>

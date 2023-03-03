@@ -1,0 +1,381 @@
+/* styles */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;600&display=swap');
+
+body {
+  color:white;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.navbar {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 33px;
+  padding: 20px 0;
+  transition: all 0.5 ease;
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+.navbar ul {
+  list-style: none;
+  text-align: center;
+}
+
+.navbar ul li {
+  display: inline-block;
+}
+
+.navbar ul li a {
+  float: left;
+  position: relative;
+  top: -15px;
+  font-size: 19px;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #d1ebff;
+}
+
+.navbar ul li a:hover {
+  border-radius: 20px;
+  color: deepskyblue;
+  background: rgba(255,255,255,0.3);
+  width: auto;
+  height: auto;
+}
+
+.logo img {
+  float: left;
+  position: relative;
+  display: inline-block;
+  margin-top: auto;
+  margin-left: 30px;
+}
+
+.logo h1 {
+  float: left;
+  position: relative;
+  display: inline-block;
+  top: -15px;
+  text-align: center;
+  padding: 3px;
+}
+
+.profile img {
+  float: right;
+  position: relative;
+  display: inline-block;
+  margin-top: auto;
+  margin-right: 30px;
+}
+
+.forumblob a {
+  position: relative;
+  display: inline-block;
+  font-size: 19px;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: white;
+  width: 350px;
+  height: auto;
+}
+
+.forumblob a:hover {
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.forumblob span {
+  color: lightblue;
+  font-size: 16px;
+  font-weight: 450;
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 6px solid #ccc;
+  border-radius: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  text-align: center;
+  color: dodgerblue;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 23px;
+  font-weight:520;
+  letter-spacing: 3px;
+}
+
+input[type=text]:focus {
+  border: 6px solid #8ec3fb;
+}
+
+input[type=submit]:focus {
+  border: 6px solid #4496ee;
+}
+
+input[type=submit] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 5px solid #ccc;
+  border-radius: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  text-align: center;
+  color: dodgerblue;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 23px;
+  font-weight:520;
+  letter-spacing: 3px;
+}
+
+.replit-auth-button {
+  background: royalblue;
+  border-radius: 3px;
+  border: none;
+  padding: 0.5em;
+  color: azure;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'IBM Plex Sans', sans-serif;
+  cursor: pointer;
+}
+
+.replit-auth-error {
+  color: red;
+}
+
+body {
+  background-color: #001424;
+}
+
+h1 {
+  color: lightcyan;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 2.5em; /* adjust the font size to your liking */
+  font-weight: bold;
+  margin-top: 1.5em; /* adjust the top margin to add spacing */
+  margin-bottom: 0.5em; /* adjust the bottom margin to add spacing */
+  border-bottom: 1px solid lightcyan;
+}
+
+h2 {
+  color: lightcyan;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+h3 {
+  color: lightcyan;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+h4 {
+  color: lightcyan;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+p {
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+a:link {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 560;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #99bbff;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 560;
+  text-decoration: none;
+}
+
+a:active {
+  color: lightskyblue;
+  font-family: 'IBM Plex Sans', sans-serif;
+  text-decoration: none;
+}
+
+.responsive {
+  max-width:100%;
+  max-height:auto;
+}
+
+.banner {
+  width:100%;
+  height:auto;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  height:25%;
+  width:100%;
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: #303030;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.image{
+  max-width:25%;
+  max-height:25%;
+}
+
+a:link {color:#bd860f;}
+a:visited {color:#36ba64;}
+a:hover {color:#00e1ff;}
+
+pre {
+  padding: 16px;
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+pre code {
+  display: inline;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  color: #d4d4d4;
+}
+
+/* Copy button styles */
+.copy-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0px 10px;
+  font-size: 14px;
+  line-height: 32px;
+  color: #d4d4d4;
+  border: none;
+  background-color: #333;
+  border-radius: 0px 5px 0px 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background-color: #444;
+}
+
+.copy-btn:focus {
+  outline: none;
+  background-color: #666;
+}
+
+.copy-btn:active {
+  background-color: #555;
+}
+
+.info
+{
+     background-color: rgba(231,243,254,0.3);
+     background-image: url("/static/info.png");
+     background-position: 9px 0px;
+     background-repeat: no-repeat;
+     border-left: solid 4px #3498db;
+     line-height: 18px;
+     overflow: hidden;
+     padding: 15px 60px;
+     font-size: 100%;
+     font-family:Arial, Helvetica, sans-serif;
+     color: white;
+     border-radius: 6px;
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+}
+
+.warn
+{
+     background-color: rgba(255,221,221,0.3);
+     background-image: url("/static/warning.png");
+     background-position: 9px 0px;
+     background-repeat: no-repeat;
+     border-left: solid 4px #f44336;
+     line-height: 18px;
+     overflow: hidden;
+     padding: 15px 60px;
+     font-size: 100%;
+     font-family:Arial, Helvetica, sans-serif;
+     color: white;
+     border-radius: 6px;
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+}
+
+.check
+{
+     background-color: rgba(221,255,221,0,3);
+     background-image: url("/static/check.png");
+     background-position: 9px 0px;
+     background-repeat: no-repeat;
+     border-left: solid 4px #04AA6D;
+     line-height: 18px;
+     overflow: hidden;
+     padding: 15px 60px;
+     font-size: 100%;
+     font-family:Arial, Helvetica, sans-serif;
+     color: white;
+     border-radius: 6px;
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+}
+.tips
+{
+     background-color: rgba(255,255,204,0.3);
+     background-image: url("/static/ampoule.png");
+     background-position: 9px 0px;
+     background-repeat: no-repeat;
+     border-left: solid 4px rgb(255,235,59);
+     line-height: 18px;
+     overflow: hidden;
+     padding: 15px 60px;
+     font-size: 100%;
+     font-family:Arial, Helvetica, sans-serif;
+     color: white;
+     border-radius: 6px;
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.username {
+  font-size: 1.2rem;
+}

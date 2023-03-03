@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- just some general stuff -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalosian RH Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.png') }}">
+<meta content="Kalosian Rom-Hacking Lab" property="og:title" />
+    <meta content="Le site de référence en terme de rom-hacking. Impossible n'est pas Kalosien." property="og:description" />
+    <meta content="https://cdn.discordapp.com/attachments/797393995989909515/827818678929981471/Dragon_originel.png" property="og:url" />
+    <meta content="https://media.discordapp.net/attachments/1074433763452403923/1080951088779374632/logo.png" property="og:image" />
+    <meta content="#FFFFFF" data-react-helmet="true" name="theme-color" />
+  </head>
+  <body> <!-- page body goes here -->
+    <nav class="navbar navbar-light bg-light">
+      <a class="logo" href="/">
+        <img src="static/logo.png" alt="logo" height="45" width="45"/>
+        <h1>Kalosian RH Lab</h1>
+      </a>
+      <a class="profile" href="/profile">
+        <img src="static/profile.png" title="account" alt="profile" height="50" width="50"/>
+      </a>
+      <ul>
+        <li><a href="/tutos">Tutos</a></li>
+        <li><a href="/youtube">Youtube</a></li>
+        <li><a href="/discord">Discord</a></li>
+      </ul>
+    </nav>
+    <div style="padding: 20px; margin-top: 50px;"></div>
+    <center>
+    <br>
+    <div>
+    <form method="POST" name="create"><h1 style="display: inline;">Forums</h1><input type="image" name="create" src="static/create.png" border="0" alt="create" style="position: relative; display: inline; margin-left: 10px; margin-bottom: -5px; width: 30px; height: 30px;"><input type='hidden' id='userInput' name='create' value='create forum'></form>
+    </div>
+    <h4>Demandez. Répondez. Apprenez.</h4>
+    <br>
+    <form method="POST">
+      <input name="search" type="text" placeholder="Cherchez un post" autocomplete="off">
+      <input type="submit">
+    </form>
+    <br><br>
+    <div class="forumblob">
+    {% for forum, data in forums.items() %}
+      <a href="/forum?forum={{forum}}">{{data.title}}<br><span>{{data.date}} - {{data.op}}</span></a>
+      <br>
+    {% endfor %}
+    </div>
+    <br>
+    </center>
+  </body>
+  
+</html>
